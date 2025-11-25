@@ -1,0 +1,117 @@
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("====================");
+            Console.WriteLine("ZADANIE 1");
+            Console.WriteLine("====================");
+            Console.Write("\n\n");
+
+
+            int result = 0;
+            int[] liczby = [5, 10, 15, 20, 25];
+
+            for(int i = 0; i < liczby.Length; i++)
+            {
+                result += liczby[i];
+            }
+
+            Console.WriteLine("Suma liczb: " + result);
+            Console.Write("\n\n");
+
+            Console.WriteLine("====================");
+            Console.WriteLine("ZADANIE 2");
+            Console.WriteLine("====================");
+            Console.Write("\n\n");
+
+            
+            int[] arr = [5, 10, 15,456,456,456,456,2, 20, 25];
+
+            int max = arr[0], min = arr[0];
+
+            for (int i = 1; i < arr.Length; i++)
+            {
+                if (max < arr[i])
+                {
+                    max = arr[i];
+                }
+
+                if (min > arr[i])
+                {
+                    min = arr[i];
+                }
+            }
+
+            
+            Console.WriteLine("Maksymalna liczba: " + max);
+            Console.WriteLine("Minimalna liczba: " + min);
+
+            Console.WriteLine("====================");
+            Console.WriteLine("ZADANIE 3");
+            Console.WriteLine("====================");
+            Console.Write("\n\n");
+
+
+            string[] names = ["Diop", "Adam", "Shaszka", "Anna"];
+
+            for (int i = names.Length - 1; i >= 0; i--)
+            {
+                Console.WriteLine("Imie: " + names[i]);
+            }
+
+            Console.Write("\n\n");
+            Console.WriteLine("====================");
+            Console.WriteLine("ZADANIE 4");
+            Console.WriteLine("====================");
+            Console.Write("\n\n");
+
+
+            int[] arr1 = [5, 10, 15, 456, 456, 456, 456, 2, 20, 25];
+
+            int parzysta = 0, nieparzysta = 0;
+
+            foreach (int num in arr1)
+            {
+                if (num % 2 == 0)
+                {
+                    parzysta++;
+                } else
+                {
+                    nieparzysta++;
+                }
+            }
+
+            Console.WriteLine("Ilość liczb parzystych: " + parzysta);
+            Console.WriteLine("Ilość liczb nieparzystych: " + nieparzysta);
+
+            Console.Write("\n\n");
+            Console.WriteLine("====================");
+            Console.WriteLine("ZADANIE 5");
+            Console.WriteLine("====================");
+            Console.Write("\n\n");
+
+            int[] A = [14, 3, 12];
+
+            int[] B = copyArr(A);
+
+            for (int i = 0; i < B.Length; i++)
+            {
+                Console.WriteLine(B[i]);
+            }
+        }
+
+        static int[] copyArr(int[] oldArr)
+        {
+            int[] arr = [3];
+
+            for(int i = 0; i < oldArr.Length; i++)
+            {
+                arr[i] = oldArr[i];
+            }
+
+            return arr;
+        }
+    }
+}
