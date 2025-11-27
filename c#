@@ -4,12 +4,13 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            zadanie1();
-            zadanie2();
-            zadanie3();
-            zadanie4();
-            zadanie5();
-            zadanie6();
+            //zadanie1();
+            //zadanie2();
+            //zadanie3();
+            //zadanie4();
+            //zadanie5();
+            //zadanie6();
+            zadanie7();
         }
 
         static void zadanie1()
@@ -135,6 +136,45 @@ namespace ConsoleApp1
 
         static void zadanie6()
         {
+
+            Console.Write("\n\n");
+            Console.WriteLine("====================");
+            Console.WriteLine("ZADANIE 6");
+            Console.WriteLine("====================");
+            Console.Write("\n\n");
+
+            int[] arr = [2, 2, 8, 1, 4, 8, 8];
+
+            Console.Write("Wprowadź liczbę którą chcesz odnaleść: ");
+            int userNumber = int.Parse(Console.ReadLine());
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (arr[i] == userNumber)
+                {
+                    Console.WriteLine("Liczba " + userNumber + " znajduje się w tablicy na indeksie " + i + ".");
+                    break;
+                } else
+                {
+                    Console.WriteLine("Liczba " + userNumber + " nie została znaleziona w tablicy.");
+                    break;
+                }
+            }
+        }
+
+        static void zadanie7()
+        {
+            Console.Write("\n\n");
+            Console.WriteLine("====================");
+            Console.WriteLine("ZADANIE 7");
+            Console.WriteLine("====================");
+            Console.Write("\n\n");
+
+            int[] arr = [13, 546, 45456, 4564, 54, 6];
+
+            for (int i = 0; i < ; i++)
+            {
+            }
         }
     }
 }
