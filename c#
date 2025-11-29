@@ -1,16 +1,23 @@
+using System.Dynamic;
+using System.Runtime.ConstrainedExecution;
+
 namespace ConsoleApp1
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            //zadanie1();
-            //zadanie2();
-            //zadanie3();
-            //zadanie4();
-            //zadanie5();
-            //zadanie6();
+            zadanie1();
+            zadanie2();
+            zadanie3();
+            zadanie4();
+            zadanie5();
+            zadanie6();
             zadanie7();
+            zadanie8();
+            zadanie9();
+            zadanie10();
+            zadanie11();
         }
 
         static void zadanie1()
@@ -18,16 +25,34 @@ namespace ConsoleApp1
             Console.WriteLine("====================");
             Console.WriteLine("ZADANIE 1");
             Console.WriteLine("====================");
-            Console.Write("\n\n");
+            Console.Write("\n");
 
 
             int result = 0;
             int[] liczby = [5, 10, 15, 20, 25];
+            int lastIndex = liczby.Length - 1;
+
 
             for (int i = 0; i < liczby.Length; i++)
             {
                 result += liczby[i];
             }
+
+
+            Console.Write("[");
+            for (int i = 0; i < liczby.Length; i++)
+            {
+                if (i != lastIndex)
+                {
+                    Console.Write(liczby[i] + ", ");
+                } else
+                {
+                    Console.Write(liczby[i]);
+                }
+            }
+            Console.Write("]");
+
+            Console.Write("\n\n");
 
             Console.WriteLine("Suma liczb: " + result);
             Console.Write("\n\n");
@@ -38,7 +63,7 @@ namespace ConsoleApp1
             Console.WriteLine("====================");
             Console.WriteLine("ZADANIE 2");
             Console.WriteLine("====================");
-            Console.Write("\n\n");
+            Console.Write("\n");
 
 
             int[] arr = [5, 10, 15, 456, 456, 456, 456, 2, 20, 25];
@@ -58,6 +83,23 @@ namespace ConsoleApp1
                 }
             }
 
+            int lastIndex = arr.Length - 1;
+
+            Console.Write("[");
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (i != lastIndex)
+                {
+                    Console.Write(arr[i] + ", ");
+                }
+                else
+                {
+                    Console.Write(arr[i]);
+                }
+            }
+            Console.Write("]\n");
+            Console.WriteLine();
+
 
             Console.WriteLine("Maksymalna liczba: " + max);
             Console.WriteLine("Minimalna liczba: " + min);
@@ -74,6 +116,23 @@ namespace ConsoleApp1
 
             string[] names = ["Diop", "Adam", "Shaszka", "Anna"];
 
+            int lastIndex = names.Length - 1;
+
+            Console.Write("[");
+            for (int i = 0; i < names.Length; i++)
+            {
+                if (i != lastIndex)
+                {
+                    Console.Write(names[i] + ", ");
+                }
+                else
+                {
+                    Console.Write(names[i]);
+                }
+            }
+            Console.Write("]\n");
+            Console.WriteLine();
+
             for (int i = names.Length - 1; i >= 0; i--)
             {
                 Console.WriteLine("Imie: " + names[i]);
@@ -86,7 +145,7 @@ namespace ConsoleApp1
             Console.WriteLine("====================");
             Console.WriteLine("ZADANIE 4");
             Console.WriteLine("====================");
-            Console.Write("\n\n");
+            Console.Write("\n");
 
 
             int[] arr1 = [5, 10, 15, 456, 456, 456, 456, 2, 20, 25];
@@ -105,33 +164,83 @@ namespace ConsoleApp1
                 }
             }
 
+            int lastIndex = arr1.Length - 1;
+
+            Console.Write("[");
+            for (int i = 0; i < arr1.Length; i++)
+            {
+                if (i != lastIndex)
+                {
+                    Console.Write(arr1[i] + ", ");
+                }
+                else
+                {
+                    Console.Write(arr1[i]);
+                }
+            }
+            Console.Write("]\n");
+            Console.WriteLine();
+
             Console.WriteLine("Ilość liczb parzystych: " + parzysta);
             Console.WriteLine("Ilość liczb nieparzystych: " + nieparzysta);
         }
 
         static void zadanie5()
         {
-            int[] A = [14, 3, 12];
-            int[] B = new int[3];
+            Console.Write("\n\n");
+            Console.WriteLine("====================");
+            Console.WriteLine("ZADANIE 5");
+            Console.WriteLine("====================");
+            Console.Write("\n");
 
+
+            int[] A = [14, 3, 12];
+
+            Console.WriteLine("Tablica: A");
+
+            int lastIndex = A.Length - 1;
+
+            Console.Write("[");
+            for (int i = 0; i < A.Length; i++)
+            {
+                if (i != lastIndex)
+                {
+                    Console.Write(A[i] + ", ");
+                }
+                else
+                {
+                    Console.Write(A[i]);
+                }
+            }
+            Console.Write("]\n");
+            Console.WriteLine();
+
+
+            // Tworzenie tablicy B i kopiowanie elementuw z A
+            int[] B = new int[3];
             for (int i = 0; i < A.Length; i++)
             {
                 B[i] = A[i] * 2;
             }
 
-            Console.Write("\n\n");
-            Console.WriteLine("====================");
-            Console.WriteLine("ZADANIE 5");
-            Console.WriteLine("====================");
-            Console.Write("\n\n");
-
-
             Console.WriteLine("Nowa tablica: B");
 
+            int lastIndexB = B.Length - 1;
+
+            Console.Write("[");
             for (int i = 0; i < B.Length; i++)
             {
-                Console.WriteLine(B[i]);
+                if (i != lastIndexB)
+                {
+                    Console.Write(B[i] + ", ");
+                }
+                else
+                {
+                    Console.Write(B[i]);
+                }
             }
+            Console.Write("]\n");
+            Console.WriteLine();
         }
 
         static void zadanie6()
@@ -141,12 +250,14 @@ namespace ConsoleApp1
             Console.WriteLine("====================");
             Console.WriteLine("ZADANIE 6");
             Console.WriteLine("====================");
-            Console.Write("\n\n");
+            Console.Write("\n");
 
             int[] arr = [2, 2, 8, 1, 4, 8, 8];
 
             Console.Write("Wprowadź liczbę którą chcesz odnaleść: ");
             int userNumber = int.Parse(Console.ReadLine());
+
+            Console.WriteLine();
 
             for (int i = 0; i < arr.Length; i++)
             {
@@ -154,12 +265,30 @@ namespace ConsoleApp1
                 {
                     Console.WriteLine("Liczba " + userNumber + " znajduje się w tablicy na indeksie " + i + ".");
                     break;
-                } else
+                }
+                else
                 {
                     Console.WriteLine("Liczba " + userNumber + " nie została znaleziona w tablicy.");
                     break;
                 }
             }
+
+            int lastIndex = arr.Length - 1;
+
+            Console.Write("\n[");
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (i != lastIndex)
+                {
+                    Console.Write(arr[i] + ", ");
+                }
+                else
+                {
+                    Console.Write(arr[i]);
+                }
+            }
+            Console.Write("]\n");
+            Console.WriteLine();
         }
 
         static void zadanie7()
@@ -168,13 +297,384 @@ namespace ConsoleApp1
             Console.WriteLine("====================");
             Console.WriteLine("ZADANIE 7");
             Console.WriteLine("====================");
-            Console.Write("\n\n");
+            Console.Write("\n");
 
-            int[] arr = [13, 546, 45456, 4564, 54, 6];
+            int[] arr = [13, 546, 93, 88, 54, 6, 2];
 
-            for (int i = 0; i < ; i++)
+            Console.WriteLine("Tablica przed:");
+
+            int lastIndex = arr.Length - 1;
+
+            Console.Write("\n[");
+            for (int i = 0; i < arr.Length; i++)
             {
+                if (i != lastIndex)
+                {
+                    Console.Write(arr[i] + ", ");
+                }
+                else
+                {
+                    Console.Write(arr[i]);
+                }
             }
+            Console.Write("]\n");
+            Console.WriteLine();
+
+            Console.WriteLine("Tablica po:");
+
+            for (int i = 0; i < arr.Length / 2; i++)
+            {
+                int firstItem = arr[i];
+
+                arr[i] = arr[arr.Length - 1 - i];
+
+                arr[arr.Length - 1 - i] = firstItem;
+            }
+
+            Console.Write("\n[");
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (i != lastIndex)
+                {
+                    Console.Write(arr[i] + ", ");
+                }
+                else
+                {
+                    Console.Write(arr[i]);
+                }
+            }
+            Console.Write("]\n");
+            Console.WriteLine();
+        }
+
+        static void zadanie8()
+        {
+            Console.Write("\n\n");
+            Console.WriteLine("====================");
+            Console.WriteLine("ZADANIE 8");
+            Console.WriteLine("====================");
+            Console.Write("\n");
+
+            int[,] arr2d = {
+                    {16,125,876},
+                    {145,67,123},
+                    {543,768,11}
+                };
+
+            Console.WriteLine("2D Tablica:");
+
+            for (int i = 0; i < arr2d.GetLength(0); i++)
+            {
+                Console.WriteLine("\n");
+                for (int j = 0; j < arr2d.GetLength(1); j++)
+                {
+                    Console.Write(arr2d[i, j] + " ");
+                }
+            }
+
+            Console.WriteLine("\n");
+
+            int sum = 0;
+
+            for (int i = 0; i < arr2d.Length; i++) {
+                for (int j = 0; j < arr2d.GetLength(1); j++)
+                {
+                    if (i == j)
+                    {
+                        sum += arr2d[i,j];
+                    }
+                }
+            }
+
+            Console.WriteLine("Suma liczb: " + sum);
+        }
+
+        static void zadanie9()
+        {
+            Console.Write("\n\n");
+            Console.WriteLine("====================");
+            Console.WriteLine("ZADANIE 9");
+            Console.WriteLine("====================");
+            Console.Write("\n");
+
+            int[] arr = [13, 546, 93, 88, 54, 6, 2];
+
+            Console.WriteLine("Tablica przed:");
+
+            int lastIndex = arr.Length - 1;
+
+            Console.Write("\n[");
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (i != lastIndex)
+                {
+                    Console.Write(arr[i] + ", ");
+                }
+                else
+                {
+                    Console.Write(arr[i]);
+                }
+            }
+            Console.Write("]\n");
+            Console.WriteLine();
+
+
+            Console.WriteLine("Tablica po:");
+
+            for(int i = 0; i < arr.Length; i++)
+            {
+                for (int j = 0; j < arr.Length; j++)
+                {
+                    if (j < arr.Length - 1)
+                    {
+                        int currentElement = arr[j];
+                        int beforeElement = arr[j + 1];
+
+                        if (currentElement > beforeElement)
+                        {
+                            arr[j + 1] = currentElement;
+                            arr[j] = beforeElement;
+                        }
+                    }
+                }
+            }
+
+            Console.Write("\n[");
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (i != lastIndex)
+                {
+                    Console.Write(arr[i] + ", ");
+                }
+                else
+                {
+                    Console.Write(arr[i]);
+                }
+            }
+            Console.Write("]\n");
+            Console.WriteLine();
+        }
+
+        static void zadanie10()
+        {
+            Console.Write("\n\n");
+            Console.WriteLine("====================");
+            Console.WriteLine("ZADANIE 10");
+            Console.WriteLine("====================");
+            Console.Write("\n");
+
+            int[] arr = [1, 2, 2, 3, 4, 4, 4, 5];
+
+            int lastIndex = arr.Length - 1;
+
+            Console.Write("[");
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (i != lastIndex)
+                {
+                    Console.Write(arr[i] + ", ");
+                }
+                else
+                {
+                    Console.Write(arr[i]);
+                }
+            }
+            Console.Write("]\n");
+            Console.WriteLine();
+
+
+            int[] filterArr = new int[arr.Length];
+
+            int unikalneLiczby = 0;
+
+            for(int i = 0; i < arr.Length; i++)
+            {
+                bool canAdd = false;
+                for (int j = 0; j < arr.Length; j++)
+                {
+                    if (arr[i] == filterArr[j])
+                    {
+                        canAdd = false;
+                        break;
+                    } else
+                    {
+                        canAdd = true;
+                    }
+                }
+
+                if (canAdd)
+                {
+                    unikalneLiczby++;
+                    filterArr[i] = arr[i];
+                }
+            }
+
+
+            int[] lastArr = new int[unikalneLiczby];
+            int custom_i = 0;
+
+            for (int i = 0; i < filterArr.Length; i++)
+            {
+                if (filterArr[i] != 0)
+                {
+                    lastArr[custom_i] = filterArr[i];
+                    custom_i++;
+                }
+            }
+
+
+            int lastIndexN = lastArr.Length - 1;
+
+            Console.Write("[");
+            for (int i = 0; i < lastArr.Length; i++)
+            {
+                if (i != lastIndexN)
+                {
+                    Console.Write(lastArr[i] + ", ");
+                }
+                else
+                {
+                    Console.Write(lastArr[i]);
+                }
+            }
+            Console.Write("]\n");
+            Console.WriteLine();
+        }
+
+        static void zadanie11()
+        {
+            Console.Write("\n\n");
+            Console.WriteLine("====================");
+            Console.WriteLine("ZADANIE 11");
+            Console.WriteLine("====================");
+            Console.Write("\n");
+
+            int[] arr1 = [1, 2, 3, 2, 1];
+            int lastIndex1 = arr1.Length - 1;
+
+            Console.Write("[");
+            for (int i = 0; i < arr1.Length; i++)
+            {
+                if (i != lastIndex1)
+                {
+                    Console.Write(arr1[i] + ", ");
+                }
+                else
+                {
+                    Console.Write(arr1[i]);
+                }
+            }
+            Console.Write("]\t");
+
+            bool arr1IsPalindor = false;
+
+            for (int i = 0; i < arr1.Length / 2; i++)
+            {
+                if (arr1[i] != arr1[arr1.Length - 1 - i])
+                {
+                    arr1IsPalindor = false;
+                    break;
+                } else
+                {
+                    arr1IsPalindor = true;
+                }
+            }
+
+            if (arr1IsPalindor)
+            {
+                Console.WriteLine("Tablica jest palindorem");
+            } else
+            {
+                Console.WriteLine("Tablica nie jest palindorem");
+            }
+            Console.WriteLine("\n");
+
+
+            string[] arr2 = ["a", "b", "b", "a"];
+            int lastIndex2 = arr2.Length - 1;
+
+            Console.Write("[");
+            for (int i = 0; i < arr2.Length; i++)
+            {
+                if (i != lastIndex2)
+                {
+                    Console.Write(arr2[i] + ", ");
+                }
+                else
+                {
+                    Console.Write(arr2[i]);
+                }
+            }
+            Console.Write("]\t");
+
+            bool arr2IsPalindor = false;
+
+            for (int i = 0; i < arr2.Length / 2; i++)
+            {
+                if (arr2[i] != arr2[arr2.Length - 1 - i])
+                {
+                    arr2IsPalindor = false;
+                    break;
+                }
+                else
+                {
+                    arr2IsPalindor = true;
+                }
+            }
+
+            if (arr2IsPalindor)
+            {
+                Console.WriteLine("Tablica jest palindorem");
+            }
+            else
+            {
+                Console.WriteLine("Tablica nie jest palindorem");
+            }
+            Console.WriteLine("\n");
+
+
+
+            int[] arr3 = [1, 2, 3, 4, 5];
+            int lastIndex3 = arr3.Length - 1;
+
+            Console.Write("[");
+            for (int i = 0; i < arr3.Length; i++)
+            {
+                if (i != lastIndex3)
+                {
+                    Console.Write(arr3[i] + ", ");
+                }
+                else
+                {
+                    Console.Write(arr3[i]);
+                }
+            }
+            Console.Write("]\t");
+
+            bool arr3IsPalindor = false;
+
+            for (int i = 0; i < arr3.Length / 2; i++)
+            {
+                if (arr3[i] != arr3[arr3.Length - 1 - i])
+                {
+                    arr3IsPalindor = false;
+                    break;
+                }
+                else
+                {
+                    arr3IsPalindor = true;
+                }
+            }
+
+            if (arr3IsPalindor)
+            {
+                Console.WriteLine("Tablica jest palindorem");
+            }
+            else
+            {
+                Console.WriteLine("Tablica nie jest palindorem");
+            }
+            Console.WriteLine("\n");
         }
     }
 }
